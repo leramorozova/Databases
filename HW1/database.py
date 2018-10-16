@@ -1,5 +1,5 @@
 import sqlite3
-import math
+
 
 def dataset_creator():
     conn = sqlite3.connect('food_database.db')

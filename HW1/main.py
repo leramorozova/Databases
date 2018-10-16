@@ -2,9 +2,8 @@ import database as data
 from flask import Flask
 from flask import url_for, render_template, request, redirect
 
-data.dataset_creator()
-
 app = Flask(__name__)
+
 
 @app.route('/', methods=['POST', 'GET'])
 def form():
