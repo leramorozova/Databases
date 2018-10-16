@@ -1,0 +1,44 @@
+<html>
+    <head>
+       <meta charset="utf-8">
+       <title>Результаты поика</title>
+    </head>
+ <body>
+
+ <h2>Вот, что нашлось по Вашему запросу:</h2>
+
+<table border="1">
+   <tr>
+    <th>Название продукта</th>
+    <th>Белки</th>
+    <th>Жиры</th>
+    <th>Углеводы</th>
+    <th>Энер. ценность</th>
+   </tr>
+
+   {% for el in result %}
+    <tr>
+    	<th>{{ el[0] }}</th>
+    	<th>{{ el[1] }}</th>
+    	<th>{{ el[2] }}</th>
+    	<th>{{ el[3] }}</th>
+    	<th>{{ el[4] }}</th>
+   </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+
+<form action="/processing/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Добавить еще один продукт">
+</form>
+
+<br>
+
+<form action="/search/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Искать еще раз">
+</form>
+
+</body>
+ </html>

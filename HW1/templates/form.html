@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Форма</title>    
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Food Base</a>
+        </div>
+      </div>
+</nav>
+
+    <div class="container">
+    
+    <div class="jumbotron">
+    <br>
+  <h2>Здравствуй, дорогой юзернейм!</h2>
+<br>
+  <p class="lead">На данном ресурсе вы можете работать с продуктовой базой данных. Сейчас она пуста, но вы можете заполнить ее собственной информацией. Все ваши действия будут сохранены, вы можете возвращаться к работе с базой в любое время <br><br> Удачи!</p>
+<br>
+<form action="/processing/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Продолжить">
+</form>
+<!--  <button type="submit" class="btn btn-default">Продолжить</button> -->
+</form>
+      </div>
+
+    </div><!-- /.container -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
