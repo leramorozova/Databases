@@ -1,23 +1,3 @@
-"""
-База содержит:
-
-1) таблицу user_info со столбиками
-
-user_name - имя пользователя VARCHAR(45)
-user_surname - фамилия пользователя VARCHAR(45)
-user_city - город, в котором пользователь живет VARCHAR(45)
-user_age - возраст пользователя INT
-
-
-2) таблицу friendship со столбиками
-
-friend_1 - id пользователя из таблицы user_info, с которым дружит упомянутый пользователь INT
-f_surname - фамилия пользователя VARCHAR(45)
-f_city - город, в котором пользователь живет VARCHAR(45)
-f_age - возраст пользователя INT
-
-"""
-
 from db_utils import Database
 
 
