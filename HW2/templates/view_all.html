@@ -1,0 +1,55 @@
+<html>
+    <head>
+       <meta charset="utf-8">
+       <title>Просмотр всех упомянутых людей</title>
+    </head>
+ <body>
+<br>
+ <center><h2>Упомянутые в системе люди</h2></center>
+
+<center><table border="1" cellpadding="5">
+   <tr>
+    <th>name</th>
+    <th>surname</th>
+    <th>age</th>
+    <th>city</th>
+   </tr>
+
+   {% for el in users %}
+    <tr>
+    	<td>{{ el[0] }}</td>
+    	<td>{{ el[1] }}</td>
+    	<td>{{ el[2] }}</td>
+    	<td>{{ el[3] }}</td>
+   </tr>
+    {% endfor %}
+
+</table></center>
+
+<br>
+<br>
+
+<center><form action="/add_user/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Зарегистрировать нового пользователя">
+</form></center>
+<br>
+<center><form action="/view_registered/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Показать загеристрированных пользователей">
+</form></center>
+
+<br>
+<center><form action="/view_all/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Показать всех упомянутых людей">
+</form></center>
+<br>
+<center><form action="/search/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Поискать по базе данных">
+</form></center>
+<br>
+<center><form action="/complex_search/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Испытать сложный поиск">
+</form></center></p>
+
+
+ </body>
+ </html>

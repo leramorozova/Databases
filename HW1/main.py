@@ -1,4 +1,4 @@
-import database as data
+import db_backend as data
 from flask import Flask
 from flask import url_for, render_template, request, redirect
 
@@ -7,20 +7,17 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
 def form():
-    if request.method == 'POST':
-        return redirect(url_for('processing'))
-    else:
-        return render_template('form.html')
+    return render_template('form.html')
 
 
-@app.route('/processing/', methods=['POST', 'GET'])
-def proc():
+@app.route('/add_user/', methods=['POST', 'GET'])
+def add_user():
     if request.args:
         name = request.args['name']
-        proteins = request.args['proteins']
-        fats = request.args['fats']
-        carbs = request.args['carbs']
-        data.insert_info(name, proteins, fats, carbs)
+        surname = request.args['surname']
+        city = request.args['city']
+        f_num = request.args['f_num']
+        data.insert_user_info(name, surname, city, f_num)
         return redirect(url_for('success'))
     return render_template('add_info.html')
 

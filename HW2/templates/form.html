@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Форма</title>    
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+<body>
+<br>
+<br>
+    <div class="container">
+    
+    <div class="jumbotron">
+  <h2>Здравствуй, дорогой юзернейм!</h2>
+<br>
+  <p class="lead">Выбери, чем ты хочешь заняться:<br>
+<form action="/add_user/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Зарегистрировать нового пользователя">
+</form>
+<br>
+<form action="/view_registered/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Показать загеристрированных пользователей">
+</form>
+<br>
+<form action="/view_all/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Показать всех упомянутых людей">
+</form>
+<br>
+<form action="/search/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Поискать по базе данных">
+</form>
+<br>
+<form action="/complex_search/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Испытать сложный поиск">
+</form></center></p>
+
+<!--  <button type="submit" class="btn btn-default">Продолжить</button> -->
+</form>
+      </div>
+
+    </div><!-- /.container -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
