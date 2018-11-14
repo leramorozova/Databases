@@ -1,5 +1,4 @@
 """
-
 База содержит:
 
 1) таблицу user_info со столбиками
@@ -43,13 +42,13 @@ def insert_friend_info(user_name, user_surname, user_city, user_age, name, surna
         user_id = res[0][0]
         db.execute('''
             INSERT INTO friendship
-            (friend_1, friend_name, friend_surname, friend_city, friend_age)
+            (friend_1, f_name, f_surname, f_city, f_age)
             VALUES (%s, %s, %s, %s, %s)
             ''', (user_id, name, surname, city, age))
     except IndexError:
         db.execute('''
             INSERT INTO friendship
-            (friend_name, friend_surname, friend_city, friend_age)
+            (friend_name, f_surname, f_city, f_age)
             VALUES (%s, %s, %s, %s)
             ''', (name, surname, city, age))
     db.commit()
@@ -109,8 +108,11 @@ def view_all():
     return unique
 
 
-# to do
-# не добавлять пользователя в friendship во второй раз, если он уже есть (например, если я добавляю того, кто уже там,
-#   добавлять второго участника связи
-# показать всех пользователей, которые из москвы, старше 18 и дружат с джоном
-# join списка друзей и списка пользователей
+def complex_search(age, city, f_surname):
+    db = Database()
+    res = db.execute('''SELECT f_name, f_surname, f_age, f_city 
+                        FROM friendship WHERE f_city = %s
+                        AND friend_1 
+                        IN (SELECT id FROM user_info WHERE user_surname = %s)
+                        HAVING f_age > %s''', (city, f_surname, age))
+    return res

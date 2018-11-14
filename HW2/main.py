@@ -64,5 +64,19 @@ def view_all():
     return render_template('view_all.html', users=users)
 
 
+@app.route('/complex_search/', methods=['POST', 'GET'])
+def complex_search():
+    if request.args:
+        age = request.args['age']
+        city = request.args['city']
+        f_surname = request.args['f_surname']
+        result = data.complex_search(age, city, f_surname)
+        if len(result) != 0:
+            return render_template('result.html', result=result)
+        else:
+            return render_template('fail.html')
+    return render_template('complex_search.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

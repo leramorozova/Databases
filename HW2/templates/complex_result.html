@@ -1,11 +1,11 @@
 <html>
     <head>
        <meta charset="utf-8">
-       <title>Просмотр зарегистрированных пользователей</title>
+       <title>Результаты СЛОЖНОГО поика</title>
     </head>
  <body>
 <br>
- <center><h2>Зарегистрированные пользователи</h2></center>
+ <center><h2>Вот, что нашлось по Вашему СЛОЖНОМУ запросу:</h2></center>
 
 <center><table border="1" cellpadding="5">
    <tr>
@@ -15,12 +15,12 @@
     <th>city</th>
    </tr>
 
-   {% for el in users %}
+   {% for el in result %}
     <tr>
+    	<td>{{ el[0] }}</td>
     	<td>{{ el[1] }}</td>
     	<td>{{ el[2] }}</td>
     	<td>{{ el[3] }}</td>
-    	<td>{{ el[4] }}</td>
    </tr>
     {% endfor %}
 
@@ -32,20 +32,25 @@
 <center><form action="/add_user/" method="POST">
     <input type="submit" class="btn btn-defautl" value="Зарегистрировать нового пользователя">
 </form></center>
+<br>
+<center><form action="/view_registered/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Показать загеристрированных пользователей">
+</form></center>
 
 <br>
 <center><form action="/view_all/" method="POST">
     <input type="submit" class="btn btn-defautl" value="Показать всех упомянутых людей">
 </form></center>
 <br>
-<center><form action="/search/" method="POST">
-    <input type="submit" class="btn btn-defautl" value="Поискать по базе данных">
-</form></center>
-<br>
+
 <center><form action="/complex_search/" method="POST">
     <input type="submit" class="btn btn-defautl" value="Испытать сложный поиск">
 </form></center></p>
 
+<br>
+<center><form action="/search/" method="POST">
+    <input type="submit" class="btn btn-defautl" value="Искать еще раз">
+</form></center></p>
 
- </body>
+</body>
  </html>
