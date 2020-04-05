@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+    td {
+      font-size: 10pt;
+      };
+    th {
+      font-size: 10pt;
+      }
+    </style>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <a class="navbar-brand" href="/">DataBase Course Project</a>
+    </nav>
+    <div class="row">
+    <div class="col-1">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link" href="/">DataBase</a>
+          <a class="nav-link" href="/search">Search</a>
+          <a class="nav-link active" href="/add">Add</a>
+          <a class="nav-link" href="/delete">Delete</a>
+          <a class="nav-link" href="/modify">Modify</a>
+      </div>
+    </div>
+    <div class="col-11">
+            <br>
+      <center><h2>Add Construction</h2></center>
+      <br>
+      {% if data %}
+
+      <center><h4 class="text-muted">The construction is added successfully!</h4></center>
+
+      {% endif %}
+      <br>
+      <form>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label"><b>Language</b></label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="lang" placeholder="Language name...">
+        </div>
+      </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label"><b>Genetics</b></label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="genetics" placeholder="Genetic info...">
+        </div>
+      </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label"><b>Geography</b></label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="geography" placeholder="Language geography info...">
+        </div>
+      </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label"><b>Construction</b></label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="construction" placeholder="Brief construction description...">
+        </div>
+      </div>
+        <div class="form-group row">
+        <label class="col-sm-2 col-form-label"><b>Question Type</b></label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" value="polar" name="polar">
+          <label class="form-check-label">
+            polar
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" value="wh-question" name="wh">
+          <label class="form-check-label">
+            wh-questions
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" value="alternative" name="alternative">
+          <label class="form-check-label">
+            alternative
+          </label>
+        </div>
+
+      </div>
+
+        <div class="form-group row">
+        <label class="col-sm-2 col-form-label"><b>Subordinator</b></label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" value="+" name="subordinator">
+          <label class="form-check-label">
+            +
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" value="-" name="subordinator">
+          <label class="form-check-label">
+            -
+          </label>
+        </div>
+        </div>
+
+       <div class="form-group row">
+        <label class="col-sm-2 col-form-label"><b>Question Word</b></label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" value="+" name="question word">
+          <label class="form-check-label">
+            +
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" value="-" name="question word">
+          <label class="form-check-label">
+            -
+          </label>
+        </div>
+       </div>
+
+     <div class="form-group row">
+        <label class="col-sm-2 col-form-label"><b>Quotative</b></label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" value="+" name="quotative">
+          <label class="form-check-label">
+            +
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" value="-" name="quotative">
+          <label class="form-check-label">
+            -
+          </label>
+        </div>
+
+     </div>
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0"><b>Complex Clause Polysemy</b></legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="conditional mood" name="conditional mood">
+          <label class="form-check-label">
+            conditional mood
+          </label>
+        </div>
+
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="concessive clause" name="concessive clause">
+          <label class="form-check-label">
+            concessive clause
+          </label>
+        </div>
+
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="complement clause" name="complement clause">
+          <label class="form-check-label">
+            complement clause
+          </label>
+        </div>
+
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="relative clause" name="relative clause">
+          <label class="form-check-label">
+            relative clause
+          </label>
+        </div>
+
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="adverbial clause" name="adverbial clause">
+          <label class="form-check-label">
+            adverbial clause
+          </label>
+        </div>
+
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="modality marker" name="modality marker">
+          <label class="form-check-label">
+            modality marker
+          </label>
+        </div>
+        </div>
+          </div>
+        </fieldset>
+
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label"><b>Comment</b></label>
+          <textarea class="form-control" name="comment" placeholder="Enter a comment..."></textarea>
+        </div>
+         <center><button type="submit" class="btn btn-primary">Post</button></center>
+      </form>
+      <br>
+
+    </div>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
